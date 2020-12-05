@@ -20,9 +20,9 @@ int func(char mass[]) {
 int main() {
 
     //Задаємо массив символів в який вписуємо слова
-    char mass[] = " cdrom costs 100 bucks ";
+    char mass[] = " eight dollars  ";
     // Виклик функції для визначення кількості слів в реченні
     func(mass);
-
+	
     return 0;
     }

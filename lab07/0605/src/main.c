@@ -1,5 +1,19 @@
+#include <stdlib.h>
+#include <time.h>
+
 // Розмір матриці константою
-#define N 3 
+#define N 5
+
+void zap(int mat[][N]){
+	srand (time(NULL));
+	for (int i = 0; i < N; i++){
+	for (int j = 0; j < N; j++){
+	mat[i][j] = rand() % 100;
+	}
+	}
+}
+
+
 int func(int mat[N][N]) {
     // Буферна змінна
     int tmp = 0; 
@@ -18,10 +32,10 @@ int func(int mat[N][N]) {
 int main()
 {
     // Задаємо матрицю, розмір якої N * N
-    int mat[N][N] = { { 1, 2, 3 }, 
-                      { 4, 5, 6 },
-                      { 7, 8, 9 }
-    };
+    
+    int mat[N][N];
+    
+    zap(mat);
     // Виклик фунції для циклічного зсуву матриці вліво
     func(mat);
 
