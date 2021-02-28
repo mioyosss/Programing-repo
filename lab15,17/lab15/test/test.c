@@ -14,9 +14,9 @@ unsigned short test_clan()
 	int count = searchclan (test, n);
 
 	if ( count == 2 )
-		printf("\nTest: successful\n");
+		printf("\nТест проведен успешно\n");
 	else 
-		printf("\nTest: failed\n");
+		printf("\nТест не пройден\n");
 }
 
 int main()
