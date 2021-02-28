@@ -1,0 +1,3 @@
+no man Scorpion 90 60 none red
+yes woman Jade 100 80 shield_20 green
+no man Subzero 70 100 shield_10 blue
