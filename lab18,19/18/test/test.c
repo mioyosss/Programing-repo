@@ -20,7 +20,7 @@ void test_cutout()
 
 	s1 = "abrakadabra";
 
-	if ( strcmp(cutout(s1, 4, 8), "abrara") == NULL )
+	if ( strcmp(cutout(s1, 5, 8), "abrabra") == NULL )
 		printf("\n Тест функции ''cutout'' пройден успешно \n");
 	else 
 		printf("\n Тест функции ''cutout'' не был пройден успешно \n");

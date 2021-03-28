@@ -24,7 +24,6 @@ char* insert(char *s1, char *s2, int pos)
 
 	return result;
 	
-	
 }
 
 char* cutout(char *s1, int start, int end)
@@ -33,12 +32,12 @@ char* cutout(char *s1, int start, int end)
 	/* Копируем в резултирующую строку символы до "вырезания" */
 	memcpy(result, s1, start-1);
 	/* Обьеденияем начало строки и ее конец после "вырезания" */
-	memcpy(result + start -1, s1 + end, strlen(s1));
+	memcpy(result + start - 1, s1 + end, strlen(s1));
 
 	printf(" ║ Вырезание: %s\n ╚════════════════════════════╝ \n\n\n", result);
 
 	return result;
-	
+
 }
 
 void* filling(fighter *fighter_mass, int N)
