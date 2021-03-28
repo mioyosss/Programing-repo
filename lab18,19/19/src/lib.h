@@ -62,12 +62,12 @@ void find_object(list_type* head,int N);
 /**
  * @fuction push_to_end
  */
-void push_to_end(list_type *head, int N);
+void push_to_end(list_type *head);
 
 /**
  * @function pop
  */
-void pop(list_type *head, int N);
+void pop(list_type **head);
 
 
 #endif

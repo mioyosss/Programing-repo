@@ -26,17 +26,30 @@ int main()
 {
 	srand(time(NULL));
 	
-	char str1[] = "Doxy";
+	char str1[50];
+	printf("\n Введите первую строку: ");
+	scanf("%s", &str1);
 	char *s1 = (char *)malloc(sizeof(char));
 	s1 = &str1;
 
-	char str2[] = "file";
+	char str2[50];
+	printf(" Введите вторую строку: ");
+	scanf("%s",&str2);
 	char *s2 = (char *)malloc(sizeof(char));
 	s2 = &str2;
- 
-	insert(s1, s2, 2);
+ 	
+ 	int pos;
+ 	int start;
+ 	int end;
+ 	printf("\n Введите позицию в рядке для вставки: ");
+ 	scanf("%d", &pos);
+ 	printf("\n Введите начальную позицию в рядке для вырезки: ");
+ 	scanf("%d", &start);
+ 	printf(" Введите конечную позицию в рядке для вырезки: ");
+ 	scanf("%d", &end);
+	insert(s1, s2, pos);
 	
-	cutout(s1, 1, 2);
+	cutout(s1, start, end);
 	
 	fighter *fighter_mass = (fighter*)malloc(sizeof(fighter)*N);
 	
@@ -128,6 +141,8 @@ int main()
 				printf(" ╚═══════════════════════════════════╝ \n\n");
 		}
 	}
+
+	
 	return 0;	
 }									
 

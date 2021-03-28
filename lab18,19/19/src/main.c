@@ -24,7 +24,7 @@
 
 int main()
 {
-	srand(time(NULL));
+	srand((unsigned)time(NULL));
 
 	// Открытые и создание файлов
 	FILE *read = fopen("/home/mioyos/Programing-repo/test/FIGHTERS.txt", "r");
@@ -55,10 +55,23 @@ int main()
 	write_to_file(head, write, N);
 	// Вывод списка на экран
 	output(head);
+	
+	
+	int what_func;
+	printf(" Функции: \n [1] Найти объект по критерию \n [2] Вставить узел в конец списка \n [3] Удалить узел списка \n Введите нужную функцию: ");
+	scanf("%d", &what_func);
+	if(what_func == 1){
 	// Нахождение элементов по заданому критерию
 	find_object(head, N);
-	
-	push_to_end(head, N);
+	} else if (what_func == 2){
+	// Вставка узла в конец списка
+	push_to_end(head);
+	output(head);
+	} else if(what_func == 3){
+	// Удаление объекта из списка
+	pop(&head);
+	output(head);
+	}
 	return 0;	
 }									
 

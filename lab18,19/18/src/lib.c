@@ -11,33 +11,34 @@
 
 char* insert(char *s1, char *s2, int pos)
 {
-	char *result = malloc(sizeof(char) * (strlen(s1) + strlen(s2)));
+	char *result = (char*)malloc(strlen(s1)+strlen(s2)+1);
 	/* Копируем определнное количество байт с первого слова в результирующую строку */
 	memcpy(result, s1, pos);
 	// printf("%s\n", result);
 	/* Копируем первое слово и вставляем в результирующую строку  */
-	memcpy(result + pos, s2, sizeof(char) * strlen(s2));
-	// printf("%s\n", result);
+	memcpy(result + pos, s2, strlen(s2));
 	/* Обьеденяем результирующую строку с концом первой строки */
-	strcat(result, s1 + pos);
+	memcpy(result + pos + strlen(s2), s1 + pos, strlen(s1));
 
 	printf("\n ╔════════════════════════════╗\n ║        Задания 1-2         ║ \n ╠════════════════════════════╣ \n ║ Вставка: %s\n ║                            ║\n", result);
-	
+
 	return result;
+	
+	
 }
 
 char* cutout(char *s1, int start, int end)
 {
-	char *result = malloc(sizeof(char) * (strlen(s1)));
+	char *result = (char*)malloc(strlen(s1)+1);
 	/* Копируем в резултирующую строку символы до "вырезания" */
-	memcpy(result, s1, start);
-	// printf("%s\n", result);
+	memcpy(result, s1, start-1);
 	/* Обьеденияем начало строки и ее конец после "вырезания" */
-	strcat(result, s1 + end + 1);
+	memcpy(result + start -1, s1 + end, strlen(s1));
 
 	printf(" ║ Вырезание: %s\n ╚════════════════════════════╝ \n\n\n", result);
-	
+
 	return result;
+	
 }
 
 void* filling(fighter *fighter_mass, int N)
@@ -58,7 +59,7 @@ void add_struct( fighter * fighter_mass, int n)
 {
 	/* Задаем массив куда будет добавлять стркутуру */
 	fighter add_mass[1];
-	/* Обращаяемся к элементам структуры через -> */
+	/* Обращаяемся к элементам структуры по указателю */
 	add_mass->human = rand() % 2;
 	add_mass->gender = rand() % 2;
 	sprintf(add_mass->name, "Боец №%d", rand() % 10);

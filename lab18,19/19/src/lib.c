@@ -439,10 +439,55 @@ list_type* create_list(int N)
 	printf("\n\n");
 }
 
-	void push_to_end(list_type *head, int N){
-	
-	list_type *node = head;
-	
-	
-	
+	void push_to_end(list_type *head){
+	//Получаем указатель на последний элемент
+	if (head == NULL) {
+		return NULL;
 	}
+    	while (head->next) {
+		head = head->next;
+	}
+	
+	// Cоздаём новый элемент u присваиваем ему значение 
+	
+	list_type *last = head;
+	list_type *tmp = (list_type*) malloc(sizeof(list_type));
+	tmp->myfighter.human = rand() % 1;
+	tmp->myfighter.gender = rand() % 1;
+	tmp->myfighter.health = rand() % 100;
+	tmp->myfighter.power = rand() % 100;
+	tmp->myfighter.bonus = rand() % 3;
+	tmp->myfighter.clancolor = rand() % 2;
+	strcpy(tmp->myfighter.name, "ADD_NODE");
+	tmp->next = NULL;
+	// Перекидываем указатель next старого элемента на новый
+	last->next = tmp;
+}
+	
+void pop(list_type **head)
+{
+	int pos;
+	printf(" Введите узел, который хотите удалить: ");
+	scanf("%d", &pos);
+	
+
+	list_type *node = *head;
+	list_type *tmp = NULL;
+    
+	if ( pos == 1 ){
+		tmp = *head;
+		*head = node->next;
+		free(tmp);
+	} else {
+	for ( int i = 0; i < pos - 2; i++ ){
+		node = node->next;            
+	}      
+	tmp = node->next;
+	node->next = node->next->next;
+	free(tmp);
+	}
+}
+	
+	
+	
+
