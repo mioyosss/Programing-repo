@@ -1,0 +1,11 @@
+10
+Yes Man Scorpion 90 60 None Red
+No Woman Jade 60 80 Shield_20 Green
+Yes Man Subzero 70 40 Extra_life Blue
+No Man Jax 50 50 Shield_10 Red
+No Woman Kitana 90 20 Shield_20 Green
+Yes Man Jax 30 55 None Red
+Yes Man Raiden 60 65 None Blue
+Yes Man Reptile 70 50 Extra_life Green
+No Woman Milena 40 30 Shield_10 Red
+No Man Smoke 60 80 Extra_life Blue
